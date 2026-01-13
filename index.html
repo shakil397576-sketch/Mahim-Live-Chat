@@ -3,56 +3,9 @@
 <head>
   <title>Lite Chat - Join</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: Arial, sans-serif;
-    }
-
-    .box {
-      text-align: center;
-      width: 280px;
-    }
-
-    h1 {
-      color: #1a73e8;
-      margin-bottom: 25px;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-bottom: 15px;
-      outline: none;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      border-radius: 6px;
-      border: none;
-      background: #1a73e8;
-      color: white;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #0c5cd6;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <div class="box">
     <h1>Join Lite Chat</h1>
     <input id="username" placeholder="Enter your username">
@@ -62,16 +15,13 @@
   <script>
     function joinChat() {
       const name = document.getElementById("username").value.trim();
-
-      if (name === "") {
+      if (!name) {
         alert("Please enter a username");
         return;
       }
-
       localStorage.setItem("litechat_name", name);
       window.location.href = "chat.html";
     }
   </script>
-
 </body>
 </html>
