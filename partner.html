@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lite Chat - Partner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="box">
+    <h1>Chat with User</h1>
+    <input id="partner" placeholder="Enter username to chat with">
+    <button onclick="goToChat()">Start Chat</button>
+  </div>
+
+  <script>
+    const myName = localStorage.getItem("litechat_name");
+    if(!myName){ window.location.href="index.html"; }
+
+    function goToChat(){
+      const partnerName = document.getElementById("partner").value.trim();
+      if(!partnerName){ alert("Enter partner username"); return; }
+      localStorage.setItem("partner_name", partnerName);
+      window.location.href="chat.html";
+    }
+  </script>
+</body>
+</html>
